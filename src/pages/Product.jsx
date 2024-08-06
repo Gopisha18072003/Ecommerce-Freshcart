@@ -48,6 +48,7 @@ export default function Product() {
                 src={`https://freshcart-api-4ftp.onrender.com/uploads/items/${product.image}`}
                 alt=""
                 className="w-[8rem] h-[8rem] object-cover"
+                crossOrigin="anonymous"
               />
               <div className="flex flex-col justify-start ">
                 <h1 className="poppins-bold text-lg mb-4">{product.name}</h1>
