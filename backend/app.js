@@ -24,7 +24,7 @@ app.use(mongoSanitize());
 
 
 app.use(cors({ 
-    origin: 'https://ecommerce-freshcart-hzag.onrender.com/',
+    origin: 'https://ecommerce-freshcart-hzag.onrender.com',
     credentials: true,
     sameSite: 'Strict',
 }));
