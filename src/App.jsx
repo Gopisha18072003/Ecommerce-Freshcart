@@ -45,9 +45,9 @@ function App() {
       errorElement: <ErrorPage />,
       children: [
         { index: true, element: <HomePage />},
-        { path: "/shop", element: <ShopPage /> },
+        { path: "shop", element: <ShopPage /> },
         {
-          path: "/cart",
+          path: "cart",
           element: (
             <ProtectedRoute>
               <Cart />
@@ -55,42 +55,42 @@ function App() {
           ),
         },
         {
-          path: "/success",
+          path: "success",
           element: (
               <Success />
           ),
         },
         {
-          path: "/cancel",
+          path: "cancel",
           element: (
               <Cancel/>
           ),
         },
         {
-          path: "/support",
+          path: "support",
           element: <Support />
 
         },
         {
-          path: "/products",
+          path: "products",
           element: <Products />,
 
         },
         {
-          path: "/orders",
+          path: "orders",
           element: <Orders />
         },
         {
-          path: "/order/:id",
+          path: "order/:id",
           element: <OrderDetails />
         },
         {
-          path: "/edit-product/:id",
+          path: "edit-product/:id",
           element: <EditProduct />
 
         },
         {
-          path: "/me",
+          path: "me",
           element: (
             <ProtectedRoute>
               <Profile/>
@@ -99,7 +99,7 @@ function App() {
         },        
         
         {
-          path: "/addProduct",
+          path: "addProduct",
           element: (
             <ProtectedRoute>
               <AddProduct/>
@@ -107,7 +107,7 @@ function App() {
           ),
         },
         {
-          path: '/product/:productId',
+          path: 'product/:productId',
           element: <Product />,
           errorElement: <ErrorPage text="No Product Found" />
         }
