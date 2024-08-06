@@ -1,0 +1,45 @@
+extends email
+
+block content
+  p Hi #{firstName},
+  p Your order has been successfully completed 🎉
+  p We are happy to confirm your order with us! Your Freshness awaits, and we are excited to deliver it.
+
+  .container
+    // Header Section
+    .header
+      h1 Freshcart Invoice
+    
+    // Content Section
+    .content
+      h2 Order Summary
+      p Order ID: #{data._id}
+      p Order Date: #{new Date(data.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+      p Customer Email: #{to}
+      
+      .order-details
+        h3 Products
+        table
+          thead
+            tr
+              th Image
+              th Name
+              th Price
+              th Quantity
+              th Total
+          tbody
+            each product in data.productDetails
+              tr
+                td
+                  img(src=product.image[0] alt=product.name style="width: 50px; height: 50px; object-fit: cover;" crossOrigin="anonymous")
+                td #{product.name}
+                td $#{product.price.toFixed(2)}
+                td #{product.quantity}
+                td $#{(product.price * product.quantity).toFixed(2)}
+      
+      .payment-details
+        h3 Payment Information
+        p Payment ID: #{data.paymentDetails.paymentId}
+        p Payment Method: #{data.paymentDetails.payment_method_types[0]}
+        p Payment Status: #{data.paymentDetails.payment_status}
+        p Total Amount: $#{data.totalAmount.toFixed(2)}

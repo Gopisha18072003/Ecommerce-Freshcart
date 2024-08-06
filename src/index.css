@@ -1,0 +1,440 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.poppins-thin {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  .poppins-extralight {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+  }
+  
+  .poppins-light {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .poppins-medium {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .poppins-semibold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .poppins-bold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .poppins-extrabold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+  }
+  
+  .poppins-black {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  .poppins-thin-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+  }
+  
+  .poppins-extralight-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: italic;
+  }
+  
+  .poppins-light-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .poppins-regular-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .poppins-medium-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  .poppins-semibold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+  }
+  
+  .poppins-bold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .poppins-extrabold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: italic;
+  }
+  
+  .poppins-black-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+  }
+  .margarine-regular {
+    font-family: "Margarine", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .lobster-regular {
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .my-custom-autocomplete {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+  
+  .my-custom-autocomplete .p-inputtext {
+    border: 2px solid rgb(63, 63, 63) !important;
+    box-shadow: none !important;
+    padding: 0.62rem 0.5rem !important;
+    border-left: 0px !important; 
+    outline: none !important;
+  }  
+  
+  .my-custom-autocomplete .p-autocomplete-panel {
+    border: none  !important;
+    outline: none !important;
+    background-color: red !important;
+  }
+
+  .p-autocomplete-items-wrapper {
+    background-color: rgb(228, 252, 209) !important;
+    border-bottom-right-radius: 0.5rem ;
+    border-bottom-left-radius: 0.5rem ;
+  }
+
+  #pr_id_1_list {
+    width: 100%;
+    font-family: 'Poppins';
+    font-weight: 500;
+    
+  } 
+  #pr_id_1_list li {
+    padding: 0.5rem 1rem;
+  }
+  #pr_id_1_list li:hover{
+    background-color: rgb(213, 255, 178) !important;
+
+  }
+
+  .mySvg svg {
+    margin-left: 0.5rem;
+  }
+
+  .p-dropdown-items-wrapper {
+    background-color: rgb(228, 252, 209) !important;
+    border-bottom-right-radius: 0.5rem ;
+    border-bottom-left-radius: 0.5rem ;
+    font-family: 'Poppins';
+    font-weight: 500;
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: rgb(172, 238, 119) rgb(228, 252, 209); /* For Firefox */
+  }
+
+
+  .p-dropdown-item {
+    padding: 0.5rem 1rem;
+  }
+  .p-dropdown-item:hover {
+    background-color: rgb(213, 255, 178) !important;
+  }
+  .p-highlight {
+    font-weight: 600 !important;
+    background-color: rgb(201, 255, 157);
+  }
+
+  .myBg {
+    background-image: url(./assets/hero2.png);
+    width: 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .section1{
+    background-image: url('./assets/section2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .solid-background {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #000d1a 50%, transparent 100%);
+    z-index: 1;
+}
+.image-background {
+    position: absolute;
+    right: 2rem;
+    height: 20rem;
+    background-image: url('./assets/section1.jpg');
+    background-repeat: no-repeat;
+    background-position: -10rem -3rem ;
+    z-index: 0;
+}
+
+.custom-button:hover svg{
+ 
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transform: translateX(4px)
+}
+
+#card:hover svg {
+  display: block;
+  
+}
+
+.p-rating-item {
+  stroke: orange;
+}
+.p-rating-item-active {
+  color: orange;
+}
+
+.solid-background2 {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to left, #000d1a 77%, transparent 100%);
+  z-index: 1;
+}
+.image-background2 {
+  position: absolute;
+  left: 0rem;
+  top: 0;
+  height: 20rem;
+  background-image: url('./assets/hero2.png');
+  background-repeat: no-repeat;
+  background-position: 0rem 0rem ;
+  background-size: cover;
+  z-index: 0;
+}
+
+#circle {
+  background-image: url('./assets/section1.jpg');
+  background-position: -28rem;
+}
+
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+.aside::-webkit-scrollbar {
+  width: 6px;
+
+}
+.aside::-webkit-scrollbar-thumb {
+  background: #a0a0a0; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners for the scrollbar*/
+}
+.aside::-webkit-scrollbar-thumb:hover {
+  background: #d1d1d1; /* Color of the scrollbar thumb */
+
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Background of the scrollbar track */
+  border-radius: 10px; /* Rounded corners for the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color of the scrollbar thumb on hover */
+}
+
+.p-progress-spinner {
+  /* Override color of the spinner */
+  --p-progress-spinner-color: white !important; /* Fallback for browsers that support CSS variables */
+}
+
+.p-progress-spinner-circle {
+  stroke: white !important; /* Directly setting the stroke color for better compatibility */
+}
+
+.p-checkbox-box {
+  display: none;
+}
+.p-checkbox {
+  background-color: white !important;
+}
+.p-highlight {
+  background-color: #04d02c;
+}
+
+.p-slider-range {
+  background-color: #04d02c;
+  height: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+
+}
+
+.p-slider-handle {
+  background-color: rgb(0, 166, 0);
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  top: -2px;
+}
+ .p-slider{
+  background-color: rgb(202, 255, 202);
+  height: 10px;
+  border-radius: 10px;
+}
+.custom-checkbox{
+  display: none;
+}
+
+/* Create a custom checkbox */
+.custom-checkbox + .custom-label {
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 20px;
+}
+
+/* Style the custom checkbox */
+.custom-checkbox + .custom-label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ccc;
+  background: #fff;
+  border-radius: 4px;
+}
+
+/* Checked state styles */
+.custom-checkbox:checked + .custom-label:before {
+  background-color: #4caf50;
+  border-color: #4caf50;
+}
+.custom-checkbox + .custom-label:after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+}
+
+/* Checked state styles */
+.custom-checkbox:checked + .custom-label:before {
+  background-color: #4caf50;
+  border-color: #4caf50;
+  ;
+}
+
+/* Show the checkmark when checked */
+.custom-checkbox:checked + .custom-label:after {
+  opacity: 1;
+}
+.custom-label {
+  margin-left: 0px;
+}
+
+
+.custom-spinner .p-progress-spinner-circle {
+  stroke: #04d02c !important;
+}
+
+.shopNow:hover svg {
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transform: translateX(4px);
+}
+
+#navBarProfile .active {
+  background-color: rgb(228, 252, 209);
+  border-left-width: 5px;
+  border-color: #04d02c;
+  color: #4caf50;
+  font-weight: 600;
+}
+
+/* Hide the spinner controls for all number inputs */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.custom-carousel .p-carousel-next,
+.custom-carousel .p-carousel-prev {
+  display: none;
+}
+
+.custom-carousel .p-carousel-content {
+  scroll-behavior: smooth !important;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 950px;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+
+tr:nth-child(even) {background-color: #f2f2f2;}
