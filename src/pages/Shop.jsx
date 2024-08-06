@@ -3,14 +3,13 @@ import { useSearchParams } from "react-router-dom";
 import { fetchProducts } from "../util/http";
 import { ProgressSpinner } from "primereact/progressspinner";
 import Card from "../ui/Card";
-import { categories } from "../App";
 import FilterTab from "../ui/FilterTab";
 import { useDispatch, useSelector } from "react-redux";
-import image from "../assets/noProductFound.png";
+
 import { addSortBy } from "../store/ui-slice";
 import { useState } from "react";
 import discountVideo from "../assets/video3.mp4";
-import bannerImage from '../assets/banner.png'
+
 
 export default function ShopPage() {
   const [searchParams, setSearchParans] = useSearchParams();
@@ -91,14 +90,14 @@ export default function ShopPage() {
             )}
             {!isPending && products.length < 1 && (
               <div className="h-screen w-full flex flex-col justify-center items-center bg-white">
-                <img src={image} alt="" className="w-[50%] " />
+                <img src='/noProductFound.png' alt="" className="w-[50%] " />
                 <h1 className="poppins-bold text-xl">No Products Found</h1>
               </div>
             )}
           </main>
         </div>
       </div>
-      <img src={bannerImage} alt="" className="h-[20rem] object-cover w-full mb-16"/>
+      <img src='/banner.png' alt="" className="h-[20rem] object-cover w-full mb-16"/>
     </>
   );
 }

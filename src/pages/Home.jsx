@@ -110,7 +110,7 @@ export default function HomePage() {
             </Link>
           </div>
           <img
-            src="./src/assets/hero-bg.png"
+            src="/hero-bg.png"
             alt=""
             className="w-auto h-[20rem]  "
           />
@@ -494,7 +494,7 @@ export default function HomePage() {
           {
             !isPendingCategoryProducts && categoryProducts.length == 0 && activeCategory && (
               <div className="w-full bg-white mt-8 flex flex-col justify-center items-center">
-                <img src={image} className="h-[24rem] w-[32rem]"/>
+                <img src='/noProductFound.png' className="h-[24rem] w-[32rem]"/>
                 <p className="py-4 poppins-bold text-xl">No products found</p>
               </div>
             )

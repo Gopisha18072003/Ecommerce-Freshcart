@@ -7,7 +7,6 @@ import {
   faCircleCheck,
 } from "@fortawesome/free-solid-svg-icons";
 
-import signupImage from "../assets/signUp.jpg";
 import { useRef } from "react";
 import { useState } from "react";
 import { useNavigate} from "react-router-dom";
@@ -34,7 +33,7 @@ export default function Signup() {
     try {
       dispatch(signInStart());
       const res = await fetch(
-        "http://127.0.0.1:8001/api/v1/freshcart/user/signup",
+        "https://freshcart-api-4ftp.onrender.com/api/v1/freshcart/user/signup",
         {
           method: "POST",
           credentials: "include",
@@ -311,7 +310,7 @@ export default function Signup() {
 
         <div className="w-0 md:w-1/2 lg:w-3/5 h:full">
           <img
-            src={signupImage}
+            src='/signUp.jpg'
             alt="fresh vegetables"
             className="object-cover h-full w-full"
           />

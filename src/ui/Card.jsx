@@ -53,7 +53,7 @@ export default function Card({ data: product }) {
     >
       <div className="mb-3 h-[12rem]">
         <img
-          src={`http://127.0.0.1:8001/uploads/items/${product.image}`}
+          src={`https://freshcart-api-4ftp.onrender.com/uploads/items/${product.image}`}
           alt={product.name}
           className="w-full h-full rounded-md cursor-pointer"
           onClick={() => handleClickProduct(product._id)}

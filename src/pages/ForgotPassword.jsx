@@ -3,7 +3,6 @@ import { ProgressSpinner } from "primereact/progressspinner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 
-import signInImage from "../assets/login_page_image.jpg";
 import { useState } from "react";
 
 export default function ForgotPassword() {
@@ -21,7 +20,7 @@ export default function ForgotPassword() {
 
     try {
       const res = await fetch(
-        "http://127.0.0.1:8001/api/v1/freshcart/user/forgotpassword",
+        "https://freshcart-api-4ftp.onrender.com/api/v1/freshcart/user/forgotpassword",
         {
           method: "POST",
           headers: {
@@ -170,7 +169,7 @@ export default function ForgotPassword() {
 
         <div className="w-0 md:w-1/2 lg:w-3/5 h:full">
           <img
-            src={signInImage}
+            src='/login_page_image.jpg'
             alt="fresh vegetables"
             className="object-cover h-full w-full"
           />

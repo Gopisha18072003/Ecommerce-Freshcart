@@ -6,7 +6,6 @@ import {
   faCircleCheck,
 } from "@fortawesome/free-solid-svg-icons";
 
-import signinImage from "../assets/login_page_image.jpg";
 import { useRef } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -26,7 +25,7 @@ export default function ResetPassword() {
     const data = Object.fromEntries(formData);
     setIsLoading(true)
     try{const res = await fetch(
-        `http://127.0.0.1:8001/api/v1/freshcart/user/resetpassword/${token}`,
+        `https://freshcart-api-4ftp.onrender.com/api/v1/freshcart/user/resetpassword/${token}`,
         
         {
           method: "PATCH",
@@ -239,7 +238,7 @@ export default function ResetPassword() {
 
         <div className="w-0 md:w-1/2 lg:w-3/5 h:full">
           <img
-            src={signinImage}
+            src='/login_page_image.jpg'
             alt="fresh vegetables"
             className="object-cover h-full w-full"
           />
