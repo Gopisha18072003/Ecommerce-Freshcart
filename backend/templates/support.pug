@@ -1,0 +1,20 @@
+extends email
+
+block content
+  p Hello Admin,
+  
+  p A customer has requested support. Here are the details:
+  
+  .container
+    // Customer Details
+    .customer-details
+      h3 Customer Details
+      p
+        strong Email:
+        |  #{data.email}
+      
+      p 
+        strong Message
+        |  #{data.message}
+  
+  p Please respond to the customer as soon as possible.
