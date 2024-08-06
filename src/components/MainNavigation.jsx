@@ -209,7 +209,7 @@ export default function MainNavigation({ products, classes }) {
                   onClick={() => handleClickNavigate("me")}
                 >
                   <img
-                    src={`http://127.0.0.1:8001/${user.image}`}
+                    src={`https://freshcart-api-4ftp.onrender.com/${user.image}`}
                     alt="Profile Image"
                     className="w-full h-full rounded-full object-cover"
                     crossOrigin="anonymous"

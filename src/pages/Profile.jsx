@@ -365,7 +365,7 @@ export default function Profile() {
             <div>
               <div className="w-[8rem] mx-auto">
                 <img
-                  src={`http://127.0.0.1:8001/${image}`}
+                  src={`https://freshcart-api-4ftp.onrender.com/${image}`}
                   alt="profile photo"
                   crossOrigin="anonymous"
                   className="w-[8rem] h-[8rem] rounded-full relative object-cover"

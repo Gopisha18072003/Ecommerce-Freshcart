@@ -21,11 +21,11 @@ export default function Cart() {
   // payment integration
   const makePayment = async () => {
     const stripe = await loadStripe(
-      "pk_test_51PCc9nSBggYrNv4RFFHXQAWbiL2m3pI2qO9uxpAsJj6CiugB2Nqo5yclTRndDrLZe0GsjnBN6oaD138ICYLjEtEE00nV4iDUkM"
+      process.env.STRIPE_PUBLIC_KEY
     );
     setIsProcessing(true);
     const response = await fetch(
-      "http://127.0.0.1:8001/api/v1/freshcart/create-checkout-session",
+      "https://freshcart-api-4ftp.onrender.com/api/v1/freshcart/create-checkout-session",
       {
         method: "POST",
         credentials: "include",

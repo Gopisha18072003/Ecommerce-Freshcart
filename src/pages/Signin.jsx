@@ -30,7 +30,7 @@ export default function Signin() {
     try {
       dispatch(signInStart());
       const res = await fetch(
-        "http://127.0.0.1:8001/api/v1/freshcart/user/login",
+        "https://freshcart-api-4ftp.onrender.com/api/v1/freshcart/user/login",
         {
           method: "POST",
           credentials: "include",
@@ -220,7 +220,7 @@ export default function Signin() {
 
         <div className="w-0 md:w-1/2 lg:w-3/5 h:full">
           <img
-            src={signInImage}
+            src='/login_page_image.jpg'
             alt="fresh vegetables"
             className="object-cover h-full w-full"
           />

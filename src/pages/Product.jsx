@@ -45,7 +45,7 @@ export default function Product() {
           <div className=" flex justify-between bg-white rounded-lg p-4 items-center">
             <div className="flex gap-8">
               <img
-                src={`../src/assets/items/${product.image}`}
+                src={`https://freshcart-api-4ftp.onrender.com/uploads/items/${product.image}`}
                 alt=""
                 className="w-[8rem] h-[8rem] object-cover"
               />
