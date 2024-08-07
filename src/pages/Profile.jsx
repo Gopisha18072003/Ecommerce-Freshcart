@@ -174,10 +174,12 @@ export default function Profile() {
   });
 
   const [confirmationModal, setConfirmationModal] = useState(false)
-
+  const [isDeleting, setIsDeleting] = useState(false)
   const handleDeleteAccount = async () => {
+    setIsDeleting(true)
     try {
       const response = await deleteAccount();
+      
       console.log(response);
 
       if (response.status === "success") {
@@ -339,7 +341,17 @@ export default function Profile() {
                 <h1 className="poppins-semibold text-lg">Are you sure ?</h1>
                 <p className="poppins-regular text-sm text-gray-400">you cannnot retreive your account back.</p>
                 <div className="flex gap-12 mt-4">
-                  <button className="p-2 rounded-md bg-red-500 text-white poppins-semibold" onClick={handleDeleteAccount}>Delete</button>
+                  <button className="p-2 rounded-md bg-red-500 text-white poppins-semibold" onClick={handleDeleteAccount}>
+                    {
+                      isDeleting && (
+                        <div>
+                          <ProgressSpinnner />
+                        </div>
+                    }
+                    {
+                      !isDeleting && "Delete"
+                    }
+                  </button>
                   <button className="poppins-semibold hover:text-myGreen-dark" onClick={() => setConfirmationModal(false)}>Cancel</button>
                 </div>
               </div>
