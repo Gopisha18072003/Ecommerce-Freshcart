@@ -20,8 +20,9 @@ export default function Cart() {
   const [isProcessing, setIsProcessing] = useState(false);
   // payment integration
   const makePayment = async () => {
+    const stripeKey = process.env.REACT_APP_STRIPE_PUBLIC_KEY
     const stripe = await loadStripe(
-      process.env.STRIPE_PUBLIC_KEY
+      
     );
     setIsProcessing(true);
     const response = await fetch(
