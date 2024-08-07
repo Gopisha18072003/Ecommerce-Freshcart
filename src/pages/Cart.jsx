@@ -21,7 +21,7 @@ export default function Cart() {
   // payment integration
   const makePayment = async () => {
     const stripeKey = process.env.REACT_APP_STRIPE_PUBLIC_KEY
-    const stripe = await loadStripe(stripeKey);
+    const stripe = await loadStripe("pk_test_51PCc9nSBggYrNv4RFFHXQAWbiL2m3pI2qO9uxpAsJj6CiugB2Nqo5yclTRndDrLZe0GsjnBN6oaD138ICYLjEtEE00nV4iDUkM");
     setIsProcessing(true);
     const response = await fetch(
       "https://freshcart-api-4ftp.onrender.com/api/v1/freshcart/create-checkout-session",
