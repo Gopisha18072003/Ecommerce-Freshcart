@@ -26,8 +26,8 @@ exports.createSession = async (req, res) => {
           quantity: product.quantity,
         })),
         mode: 'payment',
-        success_url: 'http://localhost:5173/success',
-        cancel_url: 'http://localhost:5173/cancel',
+        success_url: 'https://ecommerce-freshcart-hzag.onrender.com/success',
+        cancel_url: 'https://ecommerce-freshcart-hzag.onrender.com/cancel',
 
       });
     res.json({id: session.id})      
