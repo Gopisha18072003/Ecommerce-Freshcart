@@ -347,6 +347,7 @@ export default function Profile() {
                         <div>
                           <ProgressSpinnner />
                         </div>
+                        )
                     }
                     {
                       !isDeleting && "Delete"
