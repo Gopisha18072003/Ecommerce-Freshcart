@@ -67,12 +67,10 @@ app.use(hpp({
 //   response.send();
 // });
 
-app.use(express.json({
-    limit: '10kb'
-}));
+app.use(express.json());
 
 const limitter = rateLimiter({
-    max: 100,
+    max: 10000,
     window: 60*60*1000,
     message: 'Too many requests this IP, please try again later!'
 });
