@@ -17,7 +17,7 @@ const bookingController = require('./controller/bookingController');
 const webhook = require('./controller/webhook');
 
 
-
+app.set('trust proxy', true);
 app.use(helmet());
 app.use(xss());
 app.use(mongoSanitize());
