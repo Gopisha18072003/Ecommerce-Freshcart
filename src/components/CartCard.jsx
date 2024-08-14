@@ -51,6 +51,7 @@ export default function CartCard({ classes, item }) {
       items: cart.map((item) => ({ ...item })),
       total: totalPrice,
     };
+    console.log(product);
 
     for (let item of prvCartData.items) {
       if (item.product._id == product.product._id) {
