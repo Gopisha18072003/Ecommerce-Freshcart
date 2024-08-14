@@ -28,7 +28,9 @@ export default function MainNavigation({ products, classes }) {
     const validateToken = async () => {
       if (user) {
         const response = await refreshAccessToken();
+        console.log("Refresh Token", response);
         if (response.status == 'fail' ) {
+          
           dispatch(signOut);
         }
       }
