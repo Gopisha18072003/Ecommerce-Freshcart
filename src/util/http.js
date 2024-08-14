@@ -353,16 +353,7 @@ export const fetchCategoryCounts = async () => {
     }
   }
 
-  export const emptyCart = async() => {
-    try {
-      const response = await apiClient.patch('https://freshcart-api-4ftp.onrender.com/api/v1/freshcart/user/resetCart')
-      console.log(response)
-      return response.data
-    }catch(error) {
-      console.error('An error occurred:', error);
-      throw error;
-    }
-  }
+
   
 
   export const deleteAccount = async () => {
