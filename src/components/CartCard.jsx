@@ -13,6 +13,7 @@ export default function CartCard({ classes, item }) {
 
 
   function handleAddItem(product) {
+    console.log("added Product-",product)
     let prvCartData = {
       items: cart.map((item) => ({ ...item })),
       total: totalPrice,
@@ -57,11 +58,11 @@ export default function CartCard({ classes, item }) {
       if (item.product._id == product.product._id) {
         if(item.quantity == 1) {
           prvCartData.items = prvCartData.items.filter(allItem => allItem.product._id !== product.product._id)
-          prvCartData.total -= product.finalPrice;
+          prvCartData.total -= product.product.finalPrice;
 
         }else{
           item.quantity -= 1
-          prvCartData.total -= product.finalPrice;
+          prvCartData.total -= product.product.finalPrice;
         }
         break;
       }
