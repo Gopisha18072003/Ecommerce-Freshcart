@@ -23,21 +23,11 @@ app.use(xss());
 app.use(mongoSanitize());
 
 
-const allowedOrigins = [
-    'https://ecommerce-freshcart-hzag.onrender.com',
-    // add other allowed origins if needed
-];
-
-app.use(cors({
-    origin: function (origin, callback) {
-        if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
+app.use(cors({ 
+    origin: 'https://ecommerce-freshcart-hzag.onrender.com',
     credentials: true,
     sameSite: 'Strict',
+    optionsSuccessStatus: 200,
 }));
 
 
@@ -88,15 +78,9 @@ const limitter = rateLimiter({
     message: 'Too many requests this IP, please try again later!'
 });
 
-app.use('/uploads/images', (req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://ecommerce-freshcart-hzag.onrender.com');
-    next();
-}, express.static(path.join('uploads', 'images')));
+app.use('/uploads/images', cors(), express.static(path.join('uploads', 'images')));
 
-app.use('/uploads/items', (req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://ecommerce-freshcart-hzag.onrender.com');
-    next();
-}, express.static(path.join('uploads', 'items')));
+app.use('/uploads/items', cors(), express.static(path.join('uploads', 'items')));
 
 
 app.use('/api', limitter);
