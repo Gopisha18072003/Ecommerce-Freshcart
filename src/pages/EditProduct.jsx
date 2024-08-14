@@ -151,7 +151,7 @@ export default function EditProduct() {
           )}
           <div className="w-[12rem] mx-auto">
             <img
-              src={`https://freshcart-api-4ftp.onrender.com/uploads/items/${image|| product.image}`}
+              src={product.image}
               alt=" photo"
               crossOrigin="anonymous"
               className="w-[12rem] h-[12rem] relative object-cover border-4 border-gray-300 rounded-md"
