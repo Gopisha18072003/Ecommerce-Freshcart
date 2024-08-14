@@ -31,7 +31,7 @@ export default function MainNavigation({ products, classes }) {
        
         if (response == null ) {
           dispatch(signOut());
-          console.log("Logout Successfully")
+          navigate('/');
         }
       }
     };
