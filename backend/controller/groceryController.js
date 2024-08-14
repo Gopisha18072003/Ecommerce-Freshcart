@@ -36,7 +36,7 @@ exports.addGrocery = catchAsync(async (req, res, next) => {
   }
 
   const { name, price, description, discount, isFeatured, parameter, quantity, category } = req.body;
-  
+  console.log(req.file.location, req.file)
   const newPath = req.file.location; // Use the S3 URL instead of splitting the path
   
   const data = {
