@@ -56,7 +56,7 @@ export default function CartCard({ classes, item }) {
       if (item.product._id == product.product._id) {
         if(item.quantity == 1) {
           prvCartData.items = prvCartData.items.filter(allItem => allItem.product._id !== product.product._id)
-          prvCartData.total -= product.product.finalPrice;
+          prvCartData.total -= product.finalPrice;
 
         }else{
           item.quantity -= 1
