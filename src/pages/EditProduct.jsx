@@ -149,7 +149,6 @@ export default function EditProduct() {
               </div>
             </div>
           )}
-          <div className="flex gap-[4rem] justify-center items-start">
           <div className="w-[12rem] mx-auto">
             <img
               src={product.image}
@@ -291,7 +290,6 @@ export default function EditProduct() {
               </button>
             </div>
           </form>
-          </div>
           <div className=" flex justify-center py-8">
           <button
             className="p-3 bg-red-500 text-white poppins-semibold rounded-md text-lg"
