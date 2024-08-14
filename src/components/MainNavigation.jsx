@@ -6,7 +6,7 @@ import { Link, NavLink, redirect, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { refreshAccessToken } from "../util/authServices";
 //import { logout, updateToken } from "../store/auth-slice";
-import { signOut } from "../store/auth-slice";
+import { signOut, clearModal } from "../store/auth-slice";
 
 export default function MainNavigation({ products, classes }) {
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -29,9 +29,11 @@ export default function MainNavigation({ products, classes }) {
       if (user) {
         const response = await refreshAccessToken();
        
-        if (response == null ) {
+        if (response == null && user != null ) {
           dispatch(signOut());
           navigate('/');
+          setTimeout(() => dispatch(clearModal()), 3000);
+          console.log("No Access Token, Logout Successfully");
         }
       }
     };
