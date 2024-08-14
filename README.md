@@ -1,8 +1,8 @@
 
 # Frescart Ecommerce Website
+Visit my website [here](https://ecommerce-freshcart-hzag.onrender.com/).
 
 ![Grocery Purchasing Website](https://drive.google.com/uc?export=view&id=1JmwYHH22b3Xp6aKtfyfqfbwIejWiC_Df)
-Visit my website [here](https://ecommerce-freshcart-hzag.onrender.com/).
 
 ## Table of Contents
 1. [Overview](#overview)
@@ -36,6 +36,17 @@ Visit our website [here]((https://ecommerce-freshcart-hzag.onrender.com/)).
 ### Admin Panel Features
 1. **Manage Orders**: View and manage all orders placed by users.
 2. **Add, Update, Delete Products**: Admins can add new products, update existing ones, or delete products as needed.
+### Some Glimpses
+1. **Manage Products**
+   ![Manage_Products](https://drive.google.com/uc?export=view&id=1w2kQIuUy8tX4YJYcqSjxqa1pT3dPSZhA)
+2. **Edit Products**
+   ![Delete_Orders](https://drive.google.com/uc?export=view&id=1_aBSdWjEl50h9aC7kT_ap3PpvTH8l75C)
+3. **Add Products**
+   ![Delete_Products](https://drive.google.com/uc?export=view&id=1j4sd3xyu2OyKp0czwTEnYjLubVASxd3e)
+4. **Manage Orders**
+   ![Manage_Orders](https://drive.google.com/uc?export=view&id=13hEgSt0O5vRgLX3hiYiB8n3yaVvc-lc4)
+5. **Order Details**
+   ![Order_Details](https://drive.google.com/uc?export=view&id=10q0hhl4WnFds_MfmfT1ZHtfFMLe8zy0X)
 
 ## Technologies Used
 - **Frontend**:
