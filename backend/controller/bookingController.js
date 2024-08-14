@@ -16,7 +16,7 @@ exports.createSession = async (req, res) => {
             currency: 'usd',
             product_data: {
               name: product.product.name,
-              images: [`${req.protocol}://${req.get('host')}/uploads/items/${product.product.image}`],
+              images: [product.product.image],
               metadata: {
                 productId: product.product._id
               }

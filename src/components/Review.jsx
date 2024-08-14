@@ -3,7 +3,7 @@ export default function Review({review}) {
     return (
         <div className="flex bg-white shadow-lg rounded-lg shadow-green-100 p-4 items-center gap-6 max-w-[18rem]">
                     <img
-                      src={`https://freshcart-api-4ftp.onrender.com/${review.user.image}`}
+                      src={review.user.image}
                       alt="profile photo"
                       crossOrigin="anonymous"
                       className="w-[4rem] h-[4rem] rounded-full relative object-cover"
