@@ -55,6 +55,7 @@ export default function AddProduct() {
   return (
     <div className="mt-[12rem]">
         <h1 className="poppins-bold text-2xl my-8 text-center">Add Product</h1>
+        <div className="flex gap-[4rem] items-center justify-center">
         <div className="w-[12rem] mx-auto ">
           <img
             src={imagePreview}
@@ -216,6 +217,8 @@ export default function AddProduct() {
           </button>
         </div>
       </form>
+        </div>
+        
       <div className="h-[8rem]">
 
       </div>
