@@ -17,7 +17,7 @@ export default function EditCard({ data: product }) {
     >
       <div className="mb-3 h-[12rem]">
         <img
-          src={`https://freshcart-api-4ftp.onrender.com/uploads/items/${product.image}`}
+          src={product.image}
           alt={product.name}
           className="w-full h-full rounded-md cursor-pointer"
            crossOrigin="anonymous"

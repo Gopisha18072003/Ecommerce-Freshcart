@@ -1,9 +1,8 @@
 import { Rating } from "primereact/rating";
 import { useSelector, useDispatch } from "react-redux";
 import { addItemToCart, removeItemToCart } from "../store/cart-slice";
-import { useState } from "react";
 import { useNavigate } from "react-router";
-import { getCart, updateCart } from "../util/http";
+import { updateCart } from "../util/http";
 
 export default function Card({ data: product }) {
   const dispatch = useDispatch();
@@ -18,7 +17,7 @@ export default function Card({ data: product }) {
     };
     let isItemFound = false;
     for (let item of prvCartData.items) {
-      if (item.product._id == product._id) {
+      if (item.product._id === product._id) {
         item.quantity += 1;
         prvCartData.total += product.finalPrice;
         isItemFound = true;
@@ -34,12 +33,10 @@ export default function Card({ data: product }) {
     }
     dispatch(addItemToCart({ product }));
     const updateCartDatabase = async () => {
-      const data = JSON.stringify(prvCartData)
-      const response = await updateCart(data);
-
+      const data = JSON.stringify(prvCartData);
+      await updateCart(data);
     };
     updateCartDatabase();
-
   }
 
   function handleClickProduct(id) {
@@ -48,12 +45,12 @@ export default function Card({ data: product }) {
 
   return (
     <div
-      className="border-1 surface-border border-round m-2 text-center py-5 px-3 bg-white rounded-md relative  hover:bg-gray-50"
+      className="border-1 surface-border border-round m-2 text-center py-5 px-3 bg-white rounded-md relative hover:bg-gray-50"
       id="card"
     >
       <div className="mb-3 h-[12rem]">
         <img
-          src={`https://freshcart-api-4ftp.onrender.com/uploads/items/${product.image}`}
+          src={product.image} // Assuming product.image is the full S3 URL
           alt={product.name}
           className="w-full h-full rounded-md cursor-pointer"
           onClick={() => handleClickProduct(product._id)}
@@ -68,7 +65,7 @@ export default function Card({ data: product }) {
               <s className="text-sm text-gray-500 poppins-regular">
                 ${product.price.toFixed(2)}
               </s>{" "}
-              <span className="text-md poppins-semibold text-red-500 ">
+              <span className="text-md poppins-semibold text-red-500">
                 $
                 {(
                   product.price -
@@ -76,7 +73,6 @@ export default function Card({ data: product }) {
                 ).toFixed(2)}
               </span>
               <span className="poppins-semibold text-lg bg-myGreen-dark text-white w-[4rem] h-[4rem] block rounded-full text-center p-2 absolute top-[-0.4rem] left-[-0.5rem]">
-                {" "}
                 {product.discount}% off
               </span>
             </>

@@ -156,17 +156,18 @@ exports.protect = catchAsync(async (req, res, next) => {
   next();
 });
 
+// Upload user profile image
 exports.uploadImage = catchAsync(async (req, res, next) => {
   if (!req.file) {
-    return new AppError('No file uploaded!', 400);
+    return next(new AppError('No file uploaded!', 400));
   }
 
   const userId = req.user.id; 
-  const imagePath = req.file.path;
+  const imagePath = req.file.location; // Use `req.file.location` to get the S3 file URL
 
   const user = await User.findByIdAndUpdate(
     userId,
-    { image: imagePath },
+    { image: imagePath }, // Store the S3 URL in the database
     { new: true, runValidators: true }
   );
 
@@ -174,31 +175,42 @@ exports.uploadImage = catchAsync(async (req, res, next) => {
     return next(new AppError('User not found!', 404));
   }
 
-  res.status(200).json({ status: 'success', data: {'image': req.file.path}});
-})
+  res.status(200).json({ 
+    status: 'success', 
+    data: {
+      image: imagePath  // Return the S3 URL in the response
+    }
+  });
+});
 
+// Upload product image
 exports.uploadProductImage = catchAsync(async (req, res, next) => {
   if (!req.file) {
-    return new AppError('No file uploaded!', 400);
+    return next(new AppError('No file uploaded!', 400));
   }
 
   const productId = req.params.id; 
-  const imagePath = req.file.path;
-  const pathArray =req.file.path.split('\\')
-  const newPath = pathArray[2]
+  const imagePath = req.file.location; // Use `req.file.location` to get the S3 file URL
 
   const product = await groceryItems.findByIdAndUpdate(
     productId,
-    { image: newPath },
+    { image: imagePath }, // Store the S3 URL in the database
     { new: true, runValidators: true }
   );
 
   if (!product) {
-    return next(new AppError('User not found!', 404));
+    return next(new AppError('Product not found!', 404));
   }
 
-  res.status(200).json({ status: 'success', data: {'image': req.file.path}});
-})
+  res.status(200).json({ 
+    status: 'success', 
+    data: {
+      image: imagePath // Return the S3 URL in the response
+    }
+  });
+});
+
+
 
 
 exports.restrictTo = (...roles) => {
