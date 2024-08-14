@@ -44,7 +44,8 @@ const webhook = async (req, res) => {
       const session = event.data.object;
       const lineItems = await stripe.checkout.sessions.listLineItems(session.id)
       const productDetails = await getLineItems(lineItems)
-
+      const customer_email = session.customer_email;
+      const customerId = session.metadata.userId;
       const orderDetails = {
         productDetails: productDetails,
         email: session.customer_email,
@@ -58,13 +59,17 @@ const webhook = async (req, res) => {
         totalAmount: session.amount_total/100
 
       }
-      const customer = {name: "User dummy", email: session.customer_email}
+      const customer = {name: "User dummy", email: customer_email}
       const order = new orders(orderDetails)
       const saveOrder = await order.save()
+      
       await new Email(customer).sendInvoice(saveOrder)
    
       await new Email({name: "Admin dummy", email: process.env.ADMIN_EMAIL}).sendAdminInvoice(saveOrder)
-      
+       await Cart.findOneAndUpdate(
+                { userId: customerId},
+                { items: [], total: 0 }
+            );
       // Then define and call a function to handle the event payment_intent.succeeded
       break;
     // ... handle other event types
