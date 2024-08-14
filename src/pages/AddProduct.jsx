@@ -26,7 +26,6 @@ export default function AddProduct() {
     const formData = new FormData(event.target);
     formData.append('image', image);
     formData.append('isFeatured', isFeatured);
-
     mutate(formData)
   }
 
@@ -156,7 +155,7 @@ export default function AddProduct() {
             id="parameter"
             name="parameter"
             required={true}
-            palceholder="eg. /kg, /lt, /dozen"
+            placeholder="eg. /kg, /lt, /dz"
           />
         </div>
         <div className="">

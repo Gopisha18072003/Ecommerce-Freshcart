@@ -32,30 +32,33 @@ exports.getGrocery = catchAsync(async (req, res, next) => {
  
 exports.addGrocery = catchAsync(async (req, res, next) => {
   if (!req.file) {
-    return new AppError('No file uploaded!', 400);
+    return next(new AppError('No file uploaded!', 400));
   }
 
-  const { name, price, description, discount, isFeatured, parameter, quantity, category} = req.body;
-  const pathArray =req.file.path.split('\\')
-  const newPath = pathArray[2]
+  const { name, price, description, discount, isFeatured, parameter, quantity, category } = req.body;
+  
+  const newPath = req.file.location; // Use the S3 URL instead of splitting the path
+  
   const data = {
     name,
     price,
     description,
     discount,
     isFeatured: isFeatured === 'true',
-    image: newPath,
+    image: newPath, // Store the S3 URL in the database
     parameter,
     quantity,
     category
   }
+  
   const grocery = await GroceryItems.create(data);
 
   res.status(201).json({
     status: 'Success',
-    data: { grocery}
-  })
+    data: { grocery }
+  });
 });
+
 
 exports.deleteGrocery = catchAsync(async (req, res, next) => {
   await GroceryItems.findByIdAndDelete(req.params.id);
