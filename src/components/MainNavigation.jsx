@@ -30,8 +30,8 @@ export default function MainNavigation({ products, classes }) {
         const response = await refreshAccessToken();
        
         if (response == null ) {
-           console.log("Refresh Token", response);
-          dispatch(signOut);
+          dispatch(signOut());
+          console.log("Logout Successfully")
         }
       }
     };
