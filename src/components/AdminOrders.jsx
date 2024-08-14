@@ -10,7 +10,7 @@ export default function AdminOrders() {
   });
   const formatDate = (dateString) => {
     const date = new Date(dateString);
-    const options = { day: "numeric", month: "short", year: "numeric" };
+    const options = { day: "numeric", month: "short", year: "numeric",timeZone: 'UTC' };
     return new Intl.DateTimeFormat("en-GB", options).format(date);
   };
 
