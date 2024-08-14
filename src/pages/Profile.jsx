@@ -260,7 +260,7 @@ export default function Profile() {
                 />
               </svg>
 
-              <span>Orders</span>
+              <span>All Orders</span>
             </li>
             <li
               onClick={() => handleChaneAction("notification")}
