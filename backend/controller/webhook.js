@@ -2,6 +2,7 @@ const stripe = require("../config/stripe");
 const orders = require("../models/orderModel");
 const Email = require("../utils/email");
 const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
+const Cart = require('../models/cartModel.js')
 
 async function getLineItems(lineItems) {
     let ProductItems = []
@@ -64,12 +65,13 @@ const webhook = async (req, res) => {
       const saveOrder = await order.save()
       
       await new Email(customer).sendInvoice(saveOrder)
-   
+       console.log("UserId -", customerId)
       await new Email({name: "Admin dummy", email: process.env.ADMIN_EMAIL}).sendAdminInvoice(saveOrder)
        await Cart.findOneAndUpdate(
                 { userId: customerId},
                 { items: [], total: 0 }
             );
+          console.log("Cart emptied")
       // Then define and call a function to handle the event payment_intent.succeeded
       break;
     // ... handle other event types
