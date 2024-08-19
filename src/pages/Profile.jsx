@@ -392,7 +392,7 @@ export default function Profile() {
                   className="w-[8rem] h-[8rem] rounded-full relative object-cover"
                 />
 
-                <ImageUpload id="image" onInput={handleUploadImage} />
+                <ImageUpload id="image" onInput={uploadImage} />
               </div>
 
               <div>
