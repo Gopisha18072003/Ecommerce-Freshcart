@@ -7,7 +7,6 @@ module.exports = class Email {
     this.to = user.email;
     this.firstName = user.name.split(' ')[0];
     this.url = url;
-    console.log("reset URL(contstructor): ", url);
     this.from = `Freshcart <${process.env.USER_EMAIL}>`;
   }
 
@@ -39,7 +38,6 @@ module.exports = class Email {
   // Send the actual email
   async send(template, subject, data) {
     // 1) Render HTML based on a pug template
-    console.log("Reset URL:((send) ", this.url);
     const html = pug.renderFile(`${__dirname}/../templates/${template}.pug`, {
       firstName: this.firstName,
       url: this.url,
