@@ -165,8 +165,10 @@ export const uploadImage = async (id, value, isValid) => {
                 }
             });
             if(response.data.status == 'success') {
-
                 return response.data
+            }
+            else{
+                return null;
             }
         }
       } catch (error) {
