@@ -39,7 +39,7 @@ export default function Profile() {
   }
   const [selectedAction, setSelectedAction] = useState("profile");
   const { isProfileUploading } = useSelector(
-    (state) => state.ui.isProfileUploading
+    (state) => state.ui
   );
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -202,7 +202,6 @@ export default function Profile() {
   };
 
   const { modal: storeModal } = useSelector((state) => state.auth);
-  console.log(storeModal);
   return (
     <div className="w-full h-[44rem] bg-gray-100 flex items-center justify-center">
       {modal && (
