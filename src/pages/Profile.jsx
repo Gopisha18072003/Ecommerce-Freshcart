@@ -201,7 +201,7 @@ export default function Profile() {
   async function handleUploadImage(id, value, isValid) {
     const response = await uploadImage(id, value, isValid);
     if(response == null) {
-      console.log("File upload failed");
+      console.log("*** File upload failed ***");
       dispatch(setModalStore("Image is too large (limit: 500KB)"));
         setTimeout(() => {
           dispatch(clearModal());
