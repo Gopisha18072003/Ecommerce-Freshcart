@@ -198,6 +198,16 @@ export default function Profile() {
     }
   };
 
+  async function handleUploadImage(id, value, isValid) {
+    const response = await uploadImage(id, value, isValid);
+    if(response == null) {
+      dispatch(setModalStore("Image is too large (limit: 500KB)"));
+        setTimeout(() => {
+          dispatch(clearModal());
+        }, 3000);
+    }
+  }
+ 
   return (
     <div className="w-full h-[44rem] bg-gray-100 flex items-center justify-center">
       {modal && (
@@ -384,7 +394,7 @@ export default function Profile() {
                   className="w-[8rem] h-[8rem] rounded-full relative object-cover"
                 />
 
-                <ImageUpload id="image" onInput={uploadImage} />
+                <ImageUpload id="image" onInput={handleUploadImage} />
               </div>
 
               <div>
