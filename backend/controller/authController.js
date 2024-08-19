@@ -236,7 +236,7 @@ exports.forgotPassword  = catchAsync (async (req, res, next) => {
     const resetToken = user.createPasswordResetToken();
     await user.save({validateBeforeSave: false});
 
-    const resetURL = `https://freshcart-api-4ftp.onrender.com/resetPassword/${resetToken}`;
+    const resetURL = `https://ecommerce-freshcart-hzag.onrender.com/resetPassword/${resetToken}`;
 
     try {
         await new Email({name: 'User Dummy', email: user.email}, resetURL).sendPasswordReset()
