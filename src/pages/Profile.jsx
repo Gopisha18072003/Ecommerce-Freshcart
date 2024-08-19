@@ -198,15 +198,6 @@ export default function Profile() {
     }
   };
 
-  async function handleUploadImage(id, value, isValid) {
-    const response = await uploadImage(id, value, isValid);
-    if(response == null) {
-      dispatch(setModalStore("Image is too large (limit: 500KB)"));
-        setTimeout(() => {
-          dispatch(clearModal());
-        }, 3000);
-    }
-  }
 
   const {modal: storeModal} = useSelector(state => state.auth);
   console.log(storeModal);
@@ -221,11 +212,11 @@ export default function Profile() {
           {modal.message}
         </span>
       )}
-{/*       {storeModal && (
+      {storeModal && (
         <div className={`fixed z-50 top-[9rem] left-[42%] ${storeModal.split(' ')[0] == 'Logout' || storeModal.split(' ')[0] == 'Deleted' ? 'bg-orange-400': 'bg-myGreen-dark'} p-4 poppins-semibold text-white rounded-md`}>
            {storeModal}            
         </div>
-        )} */}
+        )}
 
       <div className="w-[80%] h-[26rem] bg-white mt-[6rem] mb-2 rounded-3xl flex">
         <aside
