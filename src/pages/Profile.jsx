@@ -208,7 +208,7 @@ export default function Profile() {
     }
   }
 
-  const {modal: storeModel} = useSelector(state => state.auth);
+  const {modal: storeModal} = useSelector(state => state.auth);
  
   return (
     <div className="w-full h-[44rem] bg-gray-100 flex items-center justify-center">
