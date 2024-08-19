@@ -38,6 +38,9 @@ export default function Profile() {
     pincode = currentUser.pincode;
   }
   const [selectedAction, setSelectedAction] = useState("profile");
+  const { isProfileUploading } = useSelector(
+    (state) => state.ui.isProfileUploading
+  );
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [modal, setModal] = useState(null);
@@ -173,13 +176,13 @@ export default function Profile() {
     queryFn: fetchMyOrders,
   });
 
-  const [confirmationModal, setConfirmationModal] = useState(false)
-  const [isDeleting, setIsDeleting] = useState(false)
+  const [confirmationModal, setConfirmationModal] = useState(false);
+  const [isDeleting, setIsDeleting] = useState(false);
   const handleDeleteAccount = async () => {
-    setIsDeleting(true)
+    setIsDeleting(true);
     try {
       const response = await deleteAccount();
-      
+
       console.log(response);
 
       if (response.status === "success") {
@@ -198,8 +201,7 @@ export default function Profile() {
     }
   };
 
-
-  const {modal: storeModal} = useSelector(state => state.auth);
+  const { modal: storeModal } = useSelector((state) => state.auth);
   console.log(storeModal);
   return (
     <div className="w-full h-[44rem] bg-gray-100 flex items-center justify-center">
@@ -213,10 +215,12 @@ export default function Profile() {
         </span>
       )}
       {storeModal && (
-        <div className={`fixed z-50 top-[9rem] left-[42%] ${storeModal.split(' ')[0] == 'Logout' || storeModal.split(' ')[0] == 'Deleted' ? 'bg-orange-400': 'bg-myGreen-dark'} p-4 poppins-semibold text-white rounded-md`}>
-           {storeModal}            
+        <div
+          className={`fixed z-50 top-[9rem] left-[42%] bg-orange-400  p-4 poppins-semibold text-white rounded-md`}
+        >
+          {storeModal}
         </div>
-        )}
+      )}
 
       <div className="w-[80%] h-[26rem] bg-white mt-[6rem] mb-2 rounded-3xl flex">
         <aside
@@ -342,30 +346,33 @@ export default function Profile() {
           </ul>
         </aside>
         <main className="w-[70%] px-12 py-12 overflow-y-scroll">
-          {
-            confirmationModal && selectedAction == "security" && (
-
-              <div className="fixed top-[50%] bg-white p-[2rem] left-[48%] rounded-xl border-2 border-gray-300 flex flex-col justify-center items-center">
-                <h1 className="poppins-semibold text-lg">Are you sure ?</h1>
-                <p className="poppins-regular text-sm text-gray-400">you cannnot retreive your account back.</p>
-                <div className="flex gap-12 mt-4">
-                  <button className="p-2 rounded-md bg-red-500 text-white poppins-semibold" onClick={handleDeleteAccount}>
-                    {
-                      isDeleting && (
-                        <div>
-                          <ProgressSpinnner />
-                        </div>
-                        )
-                    }
-                    {
-                      !isDeleting && "Delete"
-                    }
-                  </button>
-                  <button className="poppins-semibold hover:text-myGreen-dark" onClick={() => setConfirmationModal(false)}>Cancel</button>
-                </div>
+          {confirmationModal && selectedAction == "security" && (
+            <div className="fixed top-[50%] bg-white p-[2rem] left-[48%] rounded-xl border-2 border-gray-300 flex flex-col justify-center items-center">
+              <h1 className="poppins-semibold text-lg">Are you sure ?</h1>
+              <p className="poppins-regular text-sm text-gray-400">
+                you cannnot retreive your account back.
+              </p>
+              <div className="flex gap-12 mt-4">
+                <button
+                  className="p-2 rounded-md bg-red-500 text-white poppins-semibold"
+                  onClick={handleDeleteAccount}
+                >
+                  {isDeleting && (
+                    <div>
+                      <ProgressSpinner />
+                    </div>
+                  )}
+                  {!isDeleting && "Delete"}
+                </button>
+                <button
+                  className="poppins-semibold hover:text-myGreen-dark"
+                  onClick={() => setConfirmationModal(false)}
+                >
+                  Cancel
+                </button>
               </div>
-            )
-          }
+            </div>
+          )}
           <div
             className={`w-[50%] h-[50%] ${
               confirmModal == null ||
@@ -385,12 +392,15 @@ export default function Profile() {
           {selectedAction == "profile" && (
             <div>
               <div className="w-[8rem] mx-auto">
-                <img
-                  src={image}
-                  alt="profile photo"
-                  crossOrigin="anonymous"
-                  className="w-[8rem] h-[8rem] rounded-full relative object-cover"
-                />
+                {isProfileUploading && <ProgressSpinner />}
+                {!isProfileUploading && (
+                  <img
+                    src={image}
+                    alt="profile photo"
+                    crossOrigin="anonymous"
+                    className="w-[8rem] h-[8rem] rounded-full relative object-cover"
+                  />
+                )}
 
                 <ImageUpload id="image" onInput={uploadImage} />
               </div>
