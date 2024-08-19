@@ -240,7 +240,7 @@ exports.forgotPassword  = catchAsync (async (req, res, next) => {
     console.log("Reset URL: ", resetURL);
 
     try {
-        await new Email({name: 'User Dummy', email: user.email, url: resetURL}).sendPasswordReset()
+        await new Email({name: 'User Dummy', email: user.email}, url: resetURL).sendPasswordReset()
     } catch(err) {`2  `
         user.passwordResetToken = undefined;
         user.passwordResetExpires = undefined;
