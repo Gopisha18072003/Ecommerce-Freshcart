@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { updateCurrentUser, setModalStore, clearModal} from "../store/auth-slice";
+import { setIsProfileUploading } from "../store/ui-slice";
 
 const ImageUpload = (props) => {
   const [isValid, setIsValid] = useState(false);
@@ -9,6 +10,7 @@ const ImageUpload = (props) => {
   const dispatch = useDispatch();
 
   const pickedHandler = async (event) => {
+    setIsProfileUploading(true)
     let pickedFile;
     let fileIsValid = isValid;
     if (event.target.files && event.target.files.length === 1) {
@@ -21,12 +23,13 @@ const ImageUpload = (props) => {
     }
     const result = await props.onInput(props.id, pickedFile, fileIsValid);
     if(result == null) {
-      dispatch(setModalStore("Image is too large (limit: 500KB)"));
+      dispatch(setModalStore("Image should be less than 500KB"));
         setTimeout(() => {
           dispatch(clearModal());
         }, 3000);
     }
     dispatch(updateCurrentUser({"image": result.data["image"] }));
+    setIsProfileUploading(false);
   };
 
   const pickImageHandler = () => {
