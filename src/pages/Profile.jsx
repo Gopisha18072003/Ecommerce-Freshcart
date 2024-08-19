@@ -209,7 +209,7 @@ export default function Profile() {
   }
 
   const {modal: storeModal} = useSelector(state => state.auth);
- 
+  console.log(storeModal);
   return (
     <div className="w-full h-[44rem] bg-gray-100 flex items-center justify-center">
       {modal && (
@@ -221,11 +221,11 @@ export default function Profile() {
           {modal.message}
         </span>
       )}
-      {storeModal && (
+{/*       {storeModal && (
         <div className={`fixed z-50 top-[9rem] left-[42%] ${storeModal.split(' ')[0] == 'Logout' || storeModal.split(' ')[0] == 'Deleted' ? 'bg-orange-400': 'bg-myGreen-dark'} p-4 poppins-semibold text-white rounded-md`}>
            {storeModal}            
         </div>
-        )}
+        )} */}
 
       <div className="w-[80%] h-[26rem] bg-white mt-[6rem] mb-2 rounded-3xl flex">
         <aside
