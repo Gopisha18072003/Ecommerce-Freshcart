@@ -38,8 +38,8 @@ export default function Profile() {
     pincode = currentUser.pincode;
   }
   const [selectedAction, setSelectedAction] = useState("profile");
-  const { isProfileUploading } = useSelector(
-    (state) => state.ui
+  const isProfileUploading = useSelector(
+    (state) => state.ui.isProfileUploading
   );
   const dispatch = useDispatch();
   const navigate = useNavigate();
