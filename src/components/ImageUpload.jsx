@@ -29,7 +29,7 @@ const ImageUpload = (props) => {
         }, 3000);
     }
     dispatch(updateCurrentUser({"image": result.data["image"] }));
-    setIsProfileUploading(false);
+
   };
 
   const pickImageHandler = () => {
