@@ -10,7 +10,7 @@ const ImageUpload = (props) => {
   const dispatch = useDispatch();
 
   const pickedHandler = async (event) => {
-    setIsProfileUploading(true)
+    dispatch(setIsProfileUploading(true))
     let pickedFile;
     let fileIsValid = isValid;
     if (event.target.files && event.target.files.length === 1) {
@@ -31,7 +31,7 @@ const ImageUpload = (props) => {
     dispatch(updateCurrentUser({"image": result.data["image"] }));
 
      event.target.value = null;
-    setIsProfileUploading(false);
+    dispatch(setIsProfileUploading(false));
   };
 
   const pickImageHandler = () => {
