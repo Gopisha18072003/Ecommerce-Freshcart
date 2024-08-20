@@ -391,7 +391,8 @@ export default function Profile() {
           {selectedAction == "profile" && (
             <div>
               <div className="w-[8rem] mx-auto">
-                {isProfileUploading && <ProgressSpinner className="w-[8rem] h-[8rem] size-4"/>}
+                
+                {isProfileUploading && <div className="w-[8rem] h-[8rem]"><ProgressSpinner className="custom-spinner" /></div>}
                 {!isProfileUploading && (
                   <img
                     src={image}
