@@ -188,6 +188,9 @@ export const uploadProductImage = async (id, value, isValid) => {
             if(response.data.status == 'success') {
                 return response.data
             }
+            else{
+                return null;
+            }
         }
       } catch (error) {
         console.error('Error Uploading Image:', error);
