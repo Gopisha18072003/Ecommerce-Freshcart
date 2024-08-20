@@ -30,6 +30,7 @@ const ImageUpload = (props) => {
     }
     dispatch(updateCurrentUser({"image": result.data["image"] }));
     setIsProfileUploading(false);
+    window.location.reload();
   };
 
   const pickImageHandler = () => {
