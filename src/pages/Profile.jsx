@@ -395,7 +395,7 @@ export default function Profile() {
                 {isProfileUploading && <div className="w-[8rem] h-[8rem]"><ProgressSpinner className="custom-spinner" /></div>}
                 {isProfileUploading === false && (
               <>
-              {console.log(isProfileUploading}
+              {console.log(isProfileUploading)}
                   <img
                     src={image}
                     alt="profile photo"
