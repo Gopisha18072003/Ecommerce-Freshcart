@@ -29,9 +29,8 @@ const ImageUpload = (props) => {
         }, 3000);
     }
     dispatch(updateCurrentUser({"image": result.data["image"] }));
-
+     dispatch(setIsProfileUploading(false));
      event.target.value = null;
-    dispatch(setIsProfileUploading(false));
   };
 
   const pickImageHandler = () => {
