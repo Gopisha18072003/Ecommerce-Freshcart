@@ -393,13 +393,16 @@ export default function Profile() {
               <div className="w-[8rem] mx-auto">
                 
                 {isProfileUploading && <div className="w-[8rem] h-[8rem]"><ProgressSpinner className="custom-spinner" /></div>}
-                {!isProfileUploading && (
+                {isProfileUploading === false && (
+              <>
+              {console.log(isProfileUploading}
                   <img
                     src={image}
                     alt="profile photo"
                     crossOrigin="anonymous"
                     className="w-[8rem] h-[8rem] rounded-full relative object-cover"
                   />
+              </>
                 )}
 
                 <ImageUpload id="image" onInput={uploadImage} />
