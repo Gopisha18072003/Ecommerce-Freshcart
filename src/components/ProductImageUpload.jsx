@@ -1,8 +1,11 @@
 import React, { useRef, useState } from "react";
+import { updateCurrentUser, setModalStore, clearModal} from "../store/auth-slice";
+import { useDispatch } from "react-redux";
 
 const ProductImageUpload = (props) => {
   const [isValid, setIsValid] = useState(false);
   const filePickerRef = useRef();
+  const dispatch = useDispatch();
 
   const pickedHandler = async (event) => {
     let pickedFile;
@@ -16,6 +19,12 @@ const ProductImageUpload = (props) => {
       fileIsValid = false;
     }
     const result = await props.onInput(props.id, pickedFile, fileIsValid);
+    if(result == null) {
+      dispatch(setModalStore("Image should be less than 500KB"));
+        setTimeout(() => {
+          dispatch(clearModal());
+        }, 3000);
+    }
     const image = result.data.image.split('\\')[2]
     props.setImage(image)
   };
