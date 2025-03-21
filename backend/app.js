@@ -17,14 +17,14 @@ const bookingController = require('./controller/bookingController');
 const webhook = require('./controller/webhook');
 
 
-app.set('trust proxy', true);
+app.set('trust proxy', false);
 app.use(helmet());
 app.use(xss());
 app.use(mongoSanitize());
 
 
 app.use(cors({ 
-    origin: 'https://ecommerce-freshcart-hzag.onrender.com',
+    origin: 'http://localhost:5174',
     credentials: true,
     sameSite: 'Strict',
     optionsSuccessStatus: 200,

@@ -4,7 +4,7 @@ import apiClient from './interseptor'
 export const querClient = new QueryClient();
 
 export async function fetchProducts({signal, type, filters, sortBy}) {
-    let url = 'https://freshcart-api-4ftp.onrender.com/api/v1/freshcart/';
+    let url = 'http://127.0.0.1:8001/api/v1/freshcart';
     if(type === 'featured') {
         url += '?isFeatured=true';
     }else if(type === 'bestSeller') {
