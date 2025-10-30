@@ -2,7 +2,7 @@
 # Frescart Ecommerce Website
 Visit my website [here](https://ecommerce-freshcart-hzag.onrender.com/).
 
-![Grocery Purchasing Website](https://drive.google.com/file/d/14SCCTjdSYov-_vevoxhMdh36iK696J7s/view?usp=drive_link)
+![Grocery Purchasing Website](https://drive.google.com/file/d/14SCCTjdSYov-_vevoxhMdh36iK696J7s/view)
 
 ## Table of Contents
 1. [Overview](#overview)
